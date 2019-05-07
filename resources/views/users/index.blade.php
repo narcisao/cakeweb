@@ -7,7 +7,7 @@
 
         <ul class="list-group">
             @foreach($users as $user)
-                <li class="list-group-item"><?= $user; ?></li>
+                <li class="list-group-item">{{ $user->nome }}</li>
             @endforeach
         </ul>
 

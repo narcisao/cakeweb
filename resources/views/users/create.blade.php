@@ -10,6 +10,7 @@
                 <div class="card-body">
 
                     <form method="post">
+                        @csrf
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
@@ -24,11 +25,9 @@
                                     <label for="nome" class="">Nome</label>
                                     <input type="text" class="form-control" name="nome" id="nome">
 
-
                                 </div>
 
                             </div>
-
 
                             <div class="form-group">
                                 <div class="form-row">
@@ -41,8 +40,8 @@
                                             </div>
 
                                             <div class="col">
-                                            <label for="nome" class="">Senha (confirmação)</label>
-                                            <input type="text" class="form-control" name="nome" id="nome">
+                                            <label for="senhac" class="">Senha (confirmação)</label>
+                                            <input type="text" class="form-control" name="senhac" id="senhac">
 
                                             <small id="passwordHelpBlock" class="form-text text-muted">
                                                 Digite novamente a senha escolhida
@@ -52,9 +51,8 @@
                             </div>
                         </div>
 
-
                         <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-primary mx-1">Salvar</a>
+                            <button class="btn btn-primary mx-1">Salvar</button>
                             <a href="/" class="btn btn-light mx-1"><i class="fas fa-angle-left"></i> Voltar</a>
                         </div>
 
@@ -62,7 +60,6 @@
                 </div>
         </div>
     </div>
-
 
 </body>
 </html>
