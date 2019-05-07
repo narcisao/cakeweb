@@ -8,6 +8,7 @@
 <body>
 
     <div class="container">
+
         <ul class="list-group">
             <?php foreach ($users as $user): ?>
                 <li class="list-group-item"><?= $user; ?></li>
@@ -44,6 +45,9 @@
     </tr>
   </tbody>
 </table><!-->
+
+        <a href="/create" class="btn btn-primary mb-2 mt-1">Cadastrar</a>
+
     </div>
 </body>
 </html> 

@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/users', 'UsersController@index');
+Route::get('/', 'UsersController@index');
+Route::get('/create', 'UsersController@create');
