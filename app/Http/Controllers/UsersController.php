@@ -24,12 +24,13 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        $usuario = new Usuario();
-        $usuario->email = $request->email;
-        $usuario->nome = $request->nome;
-        $usuario->usuario = $request->usuario;
-        $usuario->senha = $request->senha;
-        $usuario->senhac = $request->senhac;
-        var_dump($usuario->save());
+        $email= $request->email;
+        $nome = $request->nome;
+        $usuario = $request->usuario;
+        $senha = $request->senha;
+        $senhac = $request->senhac;
+
+        $etalele = Usuario::create($request->all());
+        echo "Usuario com ID {$etalele->id} criado: {$etalele->nome}";
     }
 }
