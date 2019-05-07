@@ -11,10 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/ola', function () {
-    echo "ola mundo";
-});
+Route::get('/users', 'UsersController@index');

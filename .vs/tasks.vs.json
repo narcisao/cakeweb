@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "tarefa-Controller",
+      "appliesTo": "app/Http/Controllers/Controller.php",
+      "type": "launch"
+    }
+  ]
+}
