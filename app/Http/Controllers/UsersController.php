@@ -10,11 +10,7 @@ class UsersController extends Controller
     public function index () {
 
         $users = Usuario::all();
-
-
-        return view ('users.index', [
-        'users' => $users
-        ]);
+        return view ('users.index', compact('users'));
     }
 
     public function create()
@@ -24,13 +20,22 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        $email= $request->email;
-        $nome = $request->nome;
-        $usuario = $request->usuario;
-        $senha = $request->senha;
-        $senhac = $request->senhac;
+        
+        $users = Usuario::all();
 
-        $etalele = Usuario::create($request->all());
-        echo "Usuario com ID {$etalele->id} criado: {$etalele->nome}";
+        $users->email= $request->email;
+        $users->nome = $request->nome;
+        $users->usuario = $request->usuario;
+        $users->senha = $request->senha;
+        $users->senhac = $request->senhac;
+
+        var_dump($users);
+
+        //var_dump(Usuario::create(['email' => $email]));
+        //exit();
+
+        /*
+        $usuario = Usuario::create($request->all());
+        echo "Usuario com ID {$usuario->id} criado: {$usuario->nome}";*/
     }
 }
