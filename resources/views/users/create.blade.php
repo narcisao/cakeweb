@@ -41,7 +41,8 @@
 
                                             <div class="col">
                                             <label for="senhac" class="">Senha (confirmação)</label>
-                                            <input type="text" class="form-control" name="senhac" id="senhac">
+                                            <input type="text" class="form-control">
+                                            <!--<input type="text" class="form-control" name="senhac" id="senhac">-->
 
                                             <small id="passwordHelpBlock" class="form-text text-muted">
                                                 Digite novamente a senha escolhida

@@ -3,11 +3,18 @@
     Listagem de usuários
 @endsection
 
+@if(!empty($mensagem))
+<div class="alert alert-success">
+    {{$mensagem}}
+</div>
+@endif
+
     <div class="container">
 
         <ul class="list-group">
             @foreach($users as $user)
-                <li class="list-group-item">{{ $user->nome }}</li>
+                <li class="list-group-item ">{{ $user->nome }}</li>
+                <li class="list-group-item">{{ $user->email }}</li>
             @endforeach
         </ul>
 

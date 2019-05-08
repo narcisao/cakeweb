@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function index () {
+    public function index (Request $request) {
 
-        $users = Usuario::all();
-        return view ('users.index', compact('users'));
+        $users = Usuario::query()->orderBy('nome')->get();
+        $mensagem = $request->session()->get('mensagem');
+
+        return view ('users.index', compact('users', 'mensagem'));
     }
 
     public function create()
@@ -20,22 +22,15 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        
-        $users = Usuario::all();
 
-        $users->email= $request->email;
-        $users->nome = $request->nome;
-        $users->usuario = $request->usuario;
-        $users->senha = $request->senha;
-        $users->senhac = $request->senhac;
-
-        var_dump($users);
-
-        //var_dump(Usuario::create(['email' => $email]));
-        //exit();
-
-        /*
         $usuario = Usuario::create($request->all());
-        echo "Usuario com ID {$usuario->id} criado: {$usuario->nome}";*/
+        $request->session()->flash('mensagem', "Usuário {$usuario->nome} criado com sucesso");
+
+        return redirect('/');
+    }
+
+    public function destroy(Request $request)
+    {
+        echo $request->id;
     }
 }
