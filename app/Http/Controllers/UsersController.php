@@ -29,6 +29,12 @@ class UsersController extends Controller
         return redirect('/');
     }
 
+    public function edit(Request $request)
+    {
+        $post = Post::find($request->id);
+        return view('users.edit')->with('post', $post);
+    }
+
     public function destroy(Request $request)
     {
         echo $request->id;

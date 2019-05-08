@@ -14,3 +14,5 @@
 Route::get('/', 'UsersController@index');
 Route::get('/create', 'UsersController@create');
 Route::post('/create', 'UsersController@store');
+Route::post('/create/{{id}/edit', 'UsersController@edit');
+Route::delete('/create/{{id}/delete', 'UsersController@destroy');

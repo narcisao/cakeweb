@@ -13,12 +13,18 @@
 
         <ul class="list-group">
             @foreach($users as $user)
-                <li class="list-group-item ">{{ $user->nome }}</li>
-                <li class="list-group-item">{{ $user->email }}</li>
+                <li class="list-group-item ">{{ $user->nome }}
+
+                    <a href="/create/{{$user->id}}/edit" class="btn btn-light btn-sm"><i class="fas fa-pencil-alt"></i></i> Editar</a>
+                    <a href="/create/{{$user->id}}/delete" class="btn btn-danger btn-sm"><i class="fas fa-times"></i> Deletar</a>
+
+                </li>
+
             @endforeach
         </ul>
 
         <a href="/create" class="btn btn-primary mb-2 mt-1">Cadastrar</a>
+
 
     </div>
 </body>
