@@ -12,7 +12,12 @@
 */
 
 Route::get('/', 'UsersController@index');
+
 Route::get('/create', 'UsersController@create');
 Route::post('/create', 'UsersController@store');
-Route::post('/create/{{id}/edit', 'UsersController@edit');
-Route::delete('/create/{{id}/delete', 'UsersController@destroy');
+
+Route::get('/edit/{id}', 'UsersController@edit');
+Route::put('/edit/{id}', 'UsersController@att');
+
+Route::get('/remove/{id}', 'UsersController@delete');
+Route::delete('/remove/{id}', 'UsersController@destroy');

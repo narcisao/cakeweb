@@ -20,6 +20,18 @@ class UsersController extends Controller
         return view ('users.create');
     }
 
+    public function edit($id)
+    {
+        $user = Usuario::find($id);
+        return view ('users.edit', compact('user'));
+    }
+
+    public function delete ($id)
+    {
+        $user = Usuario::find($id);
+        return view ('users.delete', compact('user'));
+    }
+
     public function store(Request $request)
     {
 
@@ -29,10 +41,9 @@ class UsersController extends Controller
         return redirect('/');
     }
 
-    public function edit(Request $request)
+    public function att(Request $request)
     {
-        $post = Post::find($request->id);
-        return view('users.edit')->with('post', $post);
+        echo $request->id;
     }
 
     public function destroy(Request $request)

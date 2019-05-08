@@ -1,6 +1,6 @@
 @extends('layout')
 @section('cabecalho')
-    Edição de usuários
+    Exclusão de usuários
 @endsection
 
 <div class="container">
@@ -53,10 +53,15 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary mx-1">Atualizar</button>
-                    <a href="/" class="btn btn-light mx-1"><i class="fas fa-angle-left"></i> Voltar</a>
-                </div>
+                <form method="post">
+                    @csrf
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary mx-1">Deletar</button>
+
+                        <a href="/" class="btn btn-light mx-1"><i class="fas fa-angle-left"></i> Voltar</a>
+
+                    </div>
+            </form>
 
             </form>
         </div>
