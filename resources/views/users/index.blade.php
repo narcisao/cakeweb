@@ -20,12 +20,10 @@
                     <a href="/remove/{{ $user->id }}" class="btn btn-danger btn-sm"><i class="fas fa-times"></i> Deletar</a>
 
                 </li>
-
             @endforeach
         </ul>
 
         <a href="/create" class="btn btn-primary mb-2 mt-1">Cadastrar</a>
-
 
     </div>
 </body>

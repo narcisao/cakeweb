@@ -54,7 +54,9 @@
                 </div>
 
                 <form method="post">
+                    <!-- INSERIR O MODAL PARA CONFIRMAR SE VAI EXCLUIR DE FATOOOO -->
                     @csrf
+                    @method('DELETE')
                     <div class="d-flex justify-content-center">
                         <button class="btn btn-primary mx-1">Deletar</button>
 
