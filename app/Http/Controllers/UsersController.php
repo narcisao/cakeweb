@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsersFormRequest;
 use App\Usuario;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class UsersController extends Controller
         return view ('users.delete', compact('user'));
     }
 
-    public function store(Request $request)
+    public function store(UsersFormRequest $request)
     {
 
         $usuario = Usuario::create($request->all());

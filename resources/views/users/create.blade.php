@@ -3,6 +3,17 @@
     Criação de usuários
 @endsection
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $errors)
+                <li>{{ $errors }}</li>
+                @endforeach
+        </ul>
+    </div>
+@endif
+
+
     <div class="container">
 
         <div class="card mt-3 ">
@@ -26,7 +37,6 @@
                                     <input type="text" class="form-control" name="nome" id="nome">
 
                                 </div>
-
                             </div>
 
                             <div class="form-group">
