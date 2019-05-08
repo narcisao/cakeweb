@@ -24,14 +24,19 @@ class UsersFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|min:2'
+            'email' => 'required|email|max:250',
+            'usuario' => 'required||max:250',
+            'nome' => 'required|alpha|max:250',
+            'senha' => 'required||max:250'
         ];
     }
 
     public function messages()
     {
         return [
-          'required' => 'O campo :attribute é obrigatorio',
+          'required' => 'O campo :attribute é obrigatorio.',
+          'max' => 'O numéro máximo de caracteres é 250.',
+          'email' => 'O campo deve contar um e-mail válido.'
         ];
     }
 }

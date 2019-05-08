@@ -16,15 +16,15 @@
                         <div class="col">
 
                             <label for="email" class="">E-mail</label>
-                            <input type="text" class="form-control" name="email" id="email" value="{{ $user->email }}">
+                            <input type="text" class="form-control" name="email" id="email" value="{{ $user->email }}" readonly>
 
                             <label for="usuario" class="">Usuário</label>
-                            <input type="text" class="form-control" name="usuario" id="usuario" value="{{ $user->usuario }}">
+                            <input type="text" class="form-control" name="usuario" id="usuario" value="{{ $user->usuario }}" readonly>
 
                         </div>
                         <div class="col">
                             <label for="nome" class="">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="nome" value="{{ $user->nome }}">
+                            <input type="text" class="form-control" name="nome" id="nome" value="{{ $user->nome }}" readonly>
 
                         </div>
 
@@ -34,7 +34,7 @@
                         <div class="form-row">
                             <div class="col">
                                 <label for="senha" class="">Senha</label>
-                                <input type="text" class="form-control" name="senha" id="senha">
+                                <input type="text" class="form-control" name="senha" id="senha" readonly>
                                 <small id="passwordHelpBlock" class="form-text text-muted">
                                     Crie uma senha com pelo menos 6 caracteres
                                 </small>
