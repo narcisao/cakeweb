@@ -4,13 +4,15 @@
 @endsection
 
 @if(!empty($mensagem))
-    <div class="alert alert-success">
+
+    <div class="alert alert-success" role="alert">
         {{$mensagem}}
     </div>
+
 @endif
 
 <div class="container">
-    <table class="table">
+    <table class="table table-striped table-sm">
         <thead class="thead-light">
         <tr>
             <th scope="col">Nome</th>
@@ -23,10 +25,10 @@
 
         @foreach($users as $user)
 
-            <tr>
-                <th scope="row">{{ $user->nome }}</th>
-                <td>{{ $user->usuario }}</td>
-                <td>{{ $user->email }}</td>
+            <tr >
+                <td class="align-middle" scope="row">{{ $user->nome }}</    td>
+                <td class="align-middle">{{ $user->usuario }}</td>
+                <td class="align-middle">{{ $user->email }}</td>
                 @csrf
                 <td><a href="/edit/{{ $user->id }}" class="btn btn-light btn-sm"><i class="fas fa-pencil-alt"></i></i> Editar</a>
                     <a href="/remove/{{ $user->id }}" class="btn btn-danger btn-sm"><i class="fas fa-times"></i> Deletar</a></td>
