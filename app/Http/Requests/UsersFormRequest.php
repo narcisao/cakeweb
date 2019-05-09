@@ -25,9 +25,10 @@ class UsersFormRequest extends FormRequest
     {
         return [
             'email' => 'required|email|max:250',
-            'usuario' => 'required||max:250',
-            'nome' => 'required|alpha|max:250',
-            'senha' => 'required||max:250'
+            'usuario' => 'required|max:250',
+            'nome' => 'required|regex:/^[\pL\s\-]+$/u|max:250',
+            'senha' => 'required|max:250',
+            'senhac' => 'same:senha'
         ];
     }
 
@@ -36,7 +37,9 @@ class UsersFormRequest extends FormRequest
         return [
           'required' => 'O campo :attribute é obrigatorio.',
           'max' => 'O numéro máximo de caracteres é 250.',
-          'email' => 'O campo deve contar um e-mail válido.'
+          'email' => 'O campo deve contar um e-mail válido.',
+          'same' => 'As senhas devem ser compatíveis.',
+          'regex' => 'O campo nome deve contar apenas letras e espaços.'
         ];
     }
 }
