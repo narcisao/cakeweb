@@ -21,13 +21,13 @@ class UsersController extends Controller
         return view ('users.create');
     }
 
-    public function edit($id)
+    public function edit(int $id)
     {
         $user = Usuario::find($id);
         return view ('users.edit', compact('user'));
     }
 
-    public function delete ($id)
+    public function delete (int $id)
     {
         $user = Usuario::find($id);
         return view ('users.delete', compact('user'));
@@ -42,9 +42,10 @@ class UsersController extends Controller
         return redirect('/');
     }
 
-    public function att(Request $request)
+    public function att(int $id)
     {
-        echo $request->id;
+        $usuario = Usuario::find($id);
+        echo $id;
     }
 
     public function destroy(Request $request)
