@@ -42,10 +42,20 @@ class UsersController extends Controller
         return redirect('/');
     }
 
-    public function att(int $id)
+    public function update(Request $request, int $id)
     {
         $usuario = Usuario::find($id);
-        echo $id;
+
+        $usuario->email = $request->get('email');
+        $usuario->nome = $request->get('nome');
+        $usuario->usuario = $request->get('usuario');
+        $usuario->senha = $request->get('senha');
+
+        $usuario->save();
+
+        $request->session()->flash('mensagem', "Usuário {$usuario->nome} alterado com sucesso");
+
+        return redirect('/');
     }
 
     public function destroy(Request $request)

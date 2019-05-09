@@ -3,6 +3,16 @@
     Edição de usuários
 @endsection
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $errors)
+                <li>{{ $errors }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <div class="container">
 
     <div class="card mt-3 ">
@@ -10,6 +20,7 @@
         <div class="card-body">
 
             <form method="post">
+                @method('PATCH')
                 @csrf
                 <div class="form-group">
                     <div class="form-row">
@@ -34,7 +45,7 @@
                         <div class="form-row">
                             <div class="col">
                                 <label for="senha" class="">Senha</label>
-                                <input type="password" class="form-control" name="senha" id="senha">
+                                <input type="password" class="form-control" name="senha" id="senha" value="{{ $user->senha }}">
                                 <small id="passwordHelpBlock" class="form-text text-muted">
                                     Altere a senha com pelo menos 6 caracteres
                                 </small>
@@ -42,7 +53,7 @@
 
                             <div class="col">
                                 <label for="senhac" class="">Senha (confirmação)</label>
-                                <input type="password" class="form-control" name="senhac" id="senhac">
+                                <input type="password" class="form-control" name="senhac" id="senhac" value="{{ $user->senha }}">
 
                                 <small id="passwordHelpBlock" class="form-text text-muted">
                                     Digite novamente a senha escolhida
