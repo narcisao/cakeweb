@@ -21,17 +21,19 @@ class UsersFormRequest extends FormRequest
     {
         return [
             'email' => 'required|email|max:250',
-            'usuario' => 'required|max:250',
+            'usuario' => 'required|alpha_num|max:250',
             'nome' => 'required|regex:/^[\pL\s\-]+$/u|max:250',
-            'senha' => 'required|max:250',
+            'senha' => 'required|max:250|min:2',
             'senhac' => 'same:senha'
         ];
     }
     public function messages()
     {
         return [
-          'required' => 'O campo :attribute é obrigatorio.',
+          'required' => 'O campo :attribute é obrigatório.',
+          'alpha_num' => 'O campo "usuário" aceita apenas letras e números',
           'max' => 'O numéro máximo de caracteres é 250.',
+          'senha.min' => 'A senha deve conter no mínimo 6 caracteres',
           'email' => 'O campo deve contar um e-mail válido.',
           'same' => 'As senhas devem ser compatíveis.',
           'regex' => 'O campo nome deve contar apenas letras e espaços.'
