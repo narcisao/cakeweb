@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
-
 class UsersFormRequest extends FormRequest
 {
     /**
@@ -15,7 +12,6 @@ class UsersFormRequest extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -31,7 +27,6 @@ class UsersFormRequest extends FormRequest
             'senhac' => 'same:senha'
         ];
     }
-
     public function messages()
     {
         return [
