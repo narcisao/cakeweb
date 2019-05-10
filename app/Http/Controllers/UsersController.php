@@ -11,6 +11,7 @@ class UsersController extends Controller
     public function index (Request $request) {
 
         //$users = Usuario::query()->orderBy('nome')->get(); -> versao antiga de testes
+        //$users = Usuario::query()->orderBy('nome')->get();
 
         $users = Usuario::paginate(3); // -> versao para testes
         //$users = Usuario::paginate(10); -> versao final para entrega
@@ -18,6 +19,12 @@ class UsersController extends Controller
         $mensagem = $request->session()->get('mensagem');
 
         return view ('users.index', compact('users', 'mensagem'));
+    }
+
+    public function find (int $id)
+    {
+        $mostra = Usuario::find($id);
+        alert('$mostra');
     }
 
     public function create()

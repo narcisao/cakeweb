@@ -45,7 +45,7 @@
                         <div class="form-row">
                             <div class="col">
                                 <label for="senha" class="">Senha</label>
-                                <input type="password" class="form-control" name="senha" id="senha" value="{{ $user->senha }}">
+                                <input type="password" class="form-control" name="senha" id="senha">
                                 <small id="passwordHelpBlock" class="form-text text-muted">
                                     Altere a senha com pelo menos 6 caracteres
                                 </small>
@@ -53,7 +53,7 @@
 
                             <div class="col">
                                 <label for="senhac" class="">Senha (confirmação)</label>
-                                <input type="password" class="form-control" name="senhac" id="senhac" value="{{ $user->senha }}">
+                                <input type="password" class="form-control" name="senhac" id="senhac">
 
                                 <small id="passwordHelpBlock" class="form-text text-muted">
                                     Digite novamente a senha escolhida
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mb-1">
                     <button class="btn btn-primary mx-1">Atualizar</button>
                     <a href="/" class="btn btn-light mx-1"><i class="fas fa-angle-left"></i> Voltar</a>
                 </div>
