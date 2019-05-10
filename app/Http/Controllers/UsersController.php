@@ -10,7 +10,11 @@ class UsersController extends Controller
 {
     public function index (Request $request) {
 
-        $users = Usuario::query()->orderBy('nome')->get();
+        //$users = Usuario::query()->orderBy('nome')->get(); -> versao antiga de testes
+
+        $users = Usuario::paginate(3); // -> versao para testes
+        //$users = Usuario::paginate(10); -> versao final para entrega
+
         $mensagem = $request->session()->get('mensagem');
 
         return view ('users.index', compact('users', 'mensagem'));

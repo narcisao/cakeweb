@@ -46,7 +46,6 @@
         <tbody>
 
         @foreach($users as $user)
-
             <tr >
                 <td class="align-middle" scope="row">{{ $user->nome }}</td>
                 <td class="align-middle">{{ $user->usuario }}</td>
@@ -55,11 +54,13 @@
                 <td><a href="/edit/{{ $user->id }}" class="btn btn-light btn-sm"><i class="fas fa-pencil-alt"></i></i> Editar</a>
                     <a href="/remove/{{ $user->id }}" class="btn btn-danger btn-sm" ><i class="fas fa-times"></i> Deletar</a></td>
             </tr>
-
         @endforeach
 
         </tbody>
     </table>
+
+    {{ $users->links() }}
+
     <ul class="pagination justify-content-center">
     <a href="/create" class="btn btn-primary mb-2 mt-1">Cadastrar</a>
     </ul>
