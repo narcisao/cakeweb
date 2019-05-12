@@ -23,7 +23,7 @@ class UsersFormRequest extends FormRequest
             'email' => 'required|email|max:250',
             'usuario' => 'required|alpha_num|max:250',
             'nome' => 'required|regex:/^[\pL\s\-]+$/u|max:250',
-            'senha' => 'required|max:250|min:2',
+            'senha' => 'required|max:250|min:6',
             'senhac' => 'same:senha'
         ];
     }
